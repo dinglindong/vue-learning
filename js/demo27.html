@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>交互</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/vue/1.0.28/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/0.9.3/vue-resource.js"></script>
+
+    <div id="box">
+        <input type="button" value="按钮" @click="get()"/>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{},
+            methods:{
+                get:function(){
+                    //this.$http.jspnp('url',{a:1,b:2},{jsonp:'cb'}).then();//then(),ES6promis语法
+                    this.$http.jsonp('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=a&json=1&p=3',{
+                        wd:'a'
+                    },{
+                        jsonp:'cb'    //callback名字，默认名字就是callback
+                    }).then(function(res){
+                        alert('成功了');
+                        alert(res.status);
+                        alert(res.data);
+                    },function(){
+                        alert('失败了');
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

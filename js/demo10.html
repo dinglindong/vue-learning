@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="js/vue.js"></script>
+
+	<div id="box">
+		<input type="button" value="按钮" @click="show($event)"/>
+	</div>
+	
+	<script>
+		var vm = new Vue({
+			el:"#box",
+			data:{
+				msg:'hello vue!'
+			},
+			methods:{
+				show:function(ev){
+					alert(ev.clientX);
+				}
+			}
+		});
+	</script>
+</body>
+</html>

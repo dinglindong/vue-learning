@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="js/vue.js"></script>
+
+	<div id="box">
+		<div @click="show3()">
+			<input type="button" value="无阻止冒泡" @click="show2()"/>
+			<input type="button" value="标准方式" @click="show1($event)"/>
+			<input type="button" value="简写方式" @click.stop="show2()"/>
+			<!-- 两种方式阻止事件冒泡,官方推荐使用简写 -->
+		</div>
+	</div>
+	
+	<script>
+		var vm = new Vue({
+			el:"#box",
+			data:{
+				msg:'hello vue!'
+			},
+			methods:{
+				show1:function(ev){
+					ev.cancelBubble = true;
+					alert(1);
+				},
+				show2:function(){
+					alert(2);
+				},
+				show3:function(){
+					alert(3);
+				}
+			}
+		});
+	</script>
+</body>
+</html>

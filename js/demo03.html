@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script src="js/vue.js"></script>
+
+    <div id="box">
+        <p>{{msg}}</p>
+        <hr/>
+        <p>{{number}}</p>
+        <hr/>
+        <p>{{boole}}</p>
+        <hr/>
+        <p v-for="item in arr">{{item}}  {{$index}}</p>
+        <hr/>
+        <p v-for="item in json">{{item}}  {{$index}}  {{$key}}</p>
+    </div>
+
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                msg:'hello vue !',
+                number:12,
+                boole:true,
+                arr:['apple','banana','orange','grape'],
+                json:{'a':'apple','b':'banana','o':'orange','g':'grape'}
+            }
+        });
+    </script>
+
+</body>
+</html>

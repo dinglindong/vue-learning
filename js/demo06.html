@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/vue.js"></script>
+
+    <div id="box">
+        <input type="text" placeholder="在这里输入水果的名称" v-model="msg"/>
+        <br/>
+        <br/>
+        <input type="button" value="点击按钮" @click="add()"/>
+        <input type="button" value="双击按钮" @dblclick="add()"/>
+        <input type="button" value="划入按钮" @mouseover="add()"/>
+        <input type="button" value="划出按钮" @mouseout="add()"/>
+        <ul>
+            <li v-for="item in arr">{{$index}}  {{item}}</li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                msg:'',
+                arr:['apple','banana','orange','grape']
+            },
+            methods:{
+                add:function(){
+                    if(this.msg.length){
+                        this.arr.push(this.msg);
+                        this.msg ='';
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

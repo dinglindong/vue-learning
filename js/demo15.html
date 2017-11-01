@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性</title>
+</head>
+<body>
+    <script src="js/vue.js"></script>
+
+    <div id="box">
+        <!--<img src="{{url}}" alt=""/>-->
+        <br/>
+        <img v-bind:src="url" alt=""/>
+        <!--单从表现上看两个没有区别-->
+        <br/>
+        <img :src="url" alt="" :width="w"/>
+    </div>
+    
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                url:"images/bd_logo1.png",
+                w:"200px",
+                h:"200px",
+                b:"1px solid #f00"
+            },
+            methods:{}
+        });
+    </script>
+</body>
+</html>
