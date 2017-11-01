@@ -1,1 +1,1 @@
-# vuestudy
+# 这是里vue初级篇，截止到vue-resouce
