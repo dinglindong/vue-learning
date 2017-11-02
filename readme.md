@@ -1,1 +1,1 @@
-### 这是一个vue初级篇，班学习demo引用vue1.0.28+vue-resouce0.7.0，该文件中已经引入cdn可以直接下载使用查看
+### 杩欐槸涓�涓獀ue鍒濈骇绡囷紝瀛︿範demo寮曠敤vue1.0.28+vue-resouce0.7.0锛岃鏂囦欢涓凡缁忓紩鍏dn鍙互鐩存帴涓嬭浇浣跨敤鏌ョ湅
