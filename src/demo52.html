@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义指令</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/vue/1.0.28/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js"></script>
+    
+    <div id="box">
+        <input type="text" @keydown.a="show"/>
+        <input type="text" @keydown.ctrl="show"/>
+    </div>
+    <script>
+        Vue.directive('on').keyCodes.ctrl=17;
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                a:'blue'
+            },
+            methods:{
+                show:function(){
+                    alert(1);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

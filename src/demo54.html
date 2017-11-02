@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义指令</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/vue/1.0.28/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js"></script>
+
+    <div id="box">
+        <p>{{a | json}}</p>
+        <p>{{b}}</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                a:{name:'strive',age:'18'},
+                b:2
+            }
+        });
+        vm.$watch('a',function(){
+            alert('发生变化了');
+        },{deep:true});
+        document.onclick=function(){
+            vm.a.name='dinglindong';
+        };
+    </script>
+</body>
+</html>

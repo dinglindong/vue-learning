@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义指令</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/vue/1.0.28/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js"></script>
+
+    <div id="box">
+        <p>{{msg}}</p>
+        <p v-html="msg"></p>
+        <p v-red>hello word</p>
+    </div>
+    <script>
+        Vue.directive('red',function(){
+            this.el.style.background='red';
+        });
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                msg:'welcome to vue@!'
+            }
+        });
+    </script>
+</body>
+</html>

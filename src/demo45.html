@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/vue/1.0.28/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js"></script>
+
+    <div id="box">
+        <p>{{msg | toDou 2 3}}</p>
+    </div>
+    <script>
+        Vue.filter('toDou',function(input,a,b){
+            alert(a+','+b);
+            return input <10 ?'0'+input :input;
+        });
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                msg:1
+            }
+        });
+
+    </script>
+</body>
+</html>
