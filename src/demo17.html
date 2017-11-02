@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性</title>
+    <style>
+        .red{
+            color:#f00;
+        }
+        .green{
+            background:#0f0;
+        }
+    </style>
+</head>
+<body>
+    <script src="js/vue.js"></script>
+
+    <div id="box">
+        <p class="red">我是中国人</p>
+        <!--这个是正常的写法-->
+        <p :class="[red,b]">我是中国人</p>
+        <!--这个red是data里面的数据-->
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                red:'red',
+                b:'green'
+            },
+            methods:{}
+        });
+    </script>
+</body>
+</html>

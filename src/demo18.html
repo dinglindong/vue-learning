@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性</title>
+    <style>
+        .red{
+            color:#f00;
+        }
+        .green{
+            background:#0f0;
+        }
+    </style>
+</head>
+<body>
+    <script src="js/vue.js"></script>
+
+    <div id="box">
+        <p :class="{red:true}">我是中国人</p>
+        <p :class="{red:true,green:true}">我是中国人</p>
+        <p :class="{red:a,green:b}">我是中国人</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                a:true,
+                b:true
+            },
+            methods:{}
+        });
+    </script>
+</body>
+</html>

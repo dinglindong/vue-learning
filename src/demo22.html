@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板</title>
+</head>
+<body>
+    <script src="js/vue.js"></script>
+
+    <div id="box">
+        <input type="text" v-model="msg"/>
+        <p>{{*msg}}</p>
+        <p>{{msg}}</p>
+        <p>{{{msg1}}}</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                msg:"hello vue !",
+                msg1:'<span>这是里面是个标签</span>'
+            },
+            methods:{}
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器</title>
+</head>
+<body>
+    <script src="js/vue.js"></script>
+
+    <div id="box">
+        <p>{{'welcome to vue' | uppercase}}</p>
+        <p>{{'WELCOME TO VUE' | lowercase}}</p>
+        <p>{{'welcome to vue' | capitalize}}</p>
+        <p>{{123 | currency}}</p>
+        <p>{{123 | currency '￥'}}</p>
+        <p>{{123 | currency 'RMB'}}</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+            },
+            methods:{}
+        });
+    </script>
+</body>
+</html>
