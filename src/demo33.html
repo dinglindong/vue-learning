@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/vue/1.0.28/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js"></script>
+
+    <div id="box" v-cloak>
+        <p>{{a}}</p>
+        <p>{{b}}</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                a:102
+            },
+            methods:{},
+            computed:{
+                b:{
+                    get:function(){
+                        return this.a+1;
+                    },
+                    set:function(val){
+                        this.a = val;
+                    }
+                }
+            }
+        });
+        document.onclick=function(){
+            vm.b=101;
+        }
+    </script>
+</body>
+</html>

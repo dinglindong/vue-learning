@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue实例简单方法</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/vue/1.0.28/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js"></script>
+
+    <div id="box">
+        <p>{{a}}</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            aa:11,
+            show:function(){
+                alert(1);
+            },
+            data:{
+                a:110
+            },
+            methods:{}
+        }).$mount('#box');
+        console.log(vm.$options.aa);
+        vm.$options.show();
+        //aa和show都是自定义
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>生命周期</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/vue/1.0.28/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js"></script>
+
+    <div id="box" v-cloak>
+        <p>{{msg}}</p>
+        <p v-text="msg1"></p>
+        <p v-html="msg2"></p>
+        <p>{{{msg2}}}</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                msg:'welcome to vue !',
+                msg1:'welcome to vue v-text !',
+                msg2:'<span>welcome to vue html !</span>'
+            },
+            methods:{
+
+            }
+        });
+    </script>
+</body>
+</html>
