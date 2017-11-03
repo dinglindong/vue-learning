@@ -5,14 +5,19 @@
 
 1. vue介绍
 2. vue指令
-3. vue属性
-4. vue模板
-5. vue过滤器
+3. vue事件
+4. vue属性
+5. vue模板
+6. vue过滤器
 
 >   中级部分(vue-middle)：
-        
-1. vue组件
-2. vue-router路由        
+
+1. vue交互
+2. vue生命周期
+3. vue实例自带方法
+4. vue自定义过滤器、指令、键盘信息
+5. vue组件
+6. vue-router路由        
 
 >   高级部分(vue-high)：
 
