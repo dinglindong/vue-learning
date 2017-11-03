@@ -11,17 +11,20 @@
     <div id="box">
         <aaa></aaa>
     </div>
+    
     <script>
         var vma = Vue.extend({
             template:'<h3>我是标题3</h3>'
-        });//可以认为继承，继承出来一个新对象
+        });     //可以认为继承，继承出来一个新对象
         Vue.component('aaa',vma);
+        
         var vm = new Vue({
             el:"#box",
             data:{
                 bSgin:true
             }
         });
+        
     </script>
 </body>
 </html>
