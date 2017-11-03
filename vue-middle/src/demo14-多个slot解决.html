@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多个slot</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/vue/1.0.28/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js"></script>
+
+    <div id="box">
+        <aaa>
+            <ul slot="ul-slot">
+                <li>11111</li>
+                <li>22222</li>
+                <li>33333</li>
+            </ul>
+            <ol slot="ol-slot">
+                <li>11111</li>
+                <li>22222</li>
+                <li>33333</li>
+            </ol>
+        </aaa>
+        <p slot="ul-slot">11111</p>
+        <p slot="ol-slot">22222</p>
+        <hr/>
+        <aaa>
+
+        </aaa>
+    </div>
+    <!--现在有一个问题就是我上面aaa里面的内容都被strong替换了-->
+    <!--我需要使用一个slot去控制占位-->
+    <template id="a">
+        <h3>这是一个组件,让我放在模板里面来执行了</h3>
+        <slot name="ul-slot">这是默认没有内容的情况1</slot>
+        <slot name="ol-slot">这是默认没有内容的情况2</slot>
+        <p>welocme to vue @</p>
+    </template>
+    <!--现在我们想分别slot代替ul和ol！  but现在一个slot代替一个整体<aaa></aaa>里面的内容-->
+
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{},
+            components:{
+                'aaa':{
+                    template:'#a'
+                }
+            }
+        });
+    </script>
+</body>
+</html>

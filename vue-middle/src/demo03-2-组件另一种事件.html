@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/vue/1.0.28/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js"></script>
+
+    <div id="box">
+        <my-aaa></my-aaa>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{},
+            components:{
+                'my-aaa':{
+                    data:function(){
+                        return {
+                            msg:'welcome Vue'
+                        }
+                    },
+                    methods:{
+                        change:function(){
+                            alert(1);
+                            this.msg='局部组件我也要更改'
+                        }
+                    },
+                    template:'<stroong @click="change">{{msg}}</stroong>'
+                }
+            }
+        });
+    </script>
+</body>
+</html>

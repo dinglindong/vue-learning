@@ -2,29 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>过滤器</title>
+    <title>局部组件</title>
 </head>
 <body>
     <script src="https://cdn.bootcss.com/vue/1.0.28/vue.js"></script>
     <script src="https://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js"></script>
 
     <div id="box">
-        <input type="text" v-model="msg | filterHtml"/>
-        <p v-html="msg"></p>
+        <aaa></aaa>
     </div>
+
     <script>
-        Vue.filter('filterHtml',{
-            read:function(input){
-                return input.replace(/<[^<+]>/g,'');
-            },
-            write:function(val){
-                return val;
+        var Aaa=Vue.extend({
+            template:'<h3>{{msg}}</h3>',
+            data:function(){
+                return {
+                    msg:'holle'
+                }
             }
         });
         var vm = new Vue({
             el:"#box",
             data:{
-                msg:'<strong>welcome to vue@!</strong>'
+                bSgin:true
+            },
+            components:{  //局部组件，可以放到某个组件内部
+                'aaa':Aaa   //键必须加''
             }
         });
     </script>

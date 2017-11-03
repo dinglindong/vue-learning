@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父子组件传值多个</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/vue/1.0.28/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js"></script>
+
+    <div id="box">
+        <aaa></aaa>
+    </div>
+
+    <template id="a">
+        <h2>我是AAA组件-->{{msg2}}</h2>
+        <bbb :m="msg2" :my-msg="msg1"></bbb><!--需要注意的地方my-msg在js里面需要驼峰法命名-->
+    </template>
+
+    <!--<template id="b">-->
+        <!--<h2>我是BBB组件&ndash;&gt;</h2>-->
+    <!--</template>-->
+
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{},
+            components:{
+                'aaa':{
+                    data:function(){
+                        return {
+                            msg1:'我是父组件的数据！！！',
+                            msg2:'我是父组件的数据@@@@'
+                        }
+                    },
+                    template:'#a',
+                    components:{
+                        'bbb':{
+                            //props:{
+                            //    'm':String,
+                            //    'myMsg':String
+                            //},
+                            props:['m','myMsg'],
+                            template:'<h2>我是BBB组件-->{{m}}..{{myMsg}}</h2>'  //子组件要使用父组件
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

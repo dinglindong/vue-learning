@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父子组件传值</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/vue/1.0.28/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js"></script>
+
+    <div id="box">
+        <aaa></aaa>
+    </div>
+
+    <template id="a">
+        <span>我是父级组件-->{{msg1}}</span>
+        <bbb @child-msg="get"></bbb>
+    </template>
+
+    <template id="b">
+        <h2>我是BBB组件-->{{a}}</h2>
+        <input type="button" value="按钮" @click="send"/>
+    </template>
+
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{},
+            components:{
+                'aaa':{
+                    data:function(){
+                        return {
+                            msg1:'我是父组件的数据11111',
+                            msg2:'我是父组件的数据@@@@'
+                        }
+                    },
+                    template:'#a',
+                    methods:{
+                        get:function(msg){
+                            //alert(msg);
+                            this.msg1=msg;
+                        }
+                    },
+                    components:{
+                        'bbb':{
+                            data:function(){
+                                return {
+                                    a:'我是子组件的数据2222'
+                                }
+                            },
+                            template:'#b',
+                            methods:{
+                                send:function(){
+                                    //alert(11);
+                                    this.$emit('child-msg',this.a);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

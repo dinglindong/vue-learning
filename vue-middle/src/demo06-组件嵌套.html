@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父子组件</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/vue/1.0.28/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js"></script>
+
+    <div id="box">
+        <aaa></aaa>
+    </div>
+
+    <!--<template id="a">-->
+        <!--<h2>我是AAA组件</h2>-->
+    <!--</template>-->
+    <!--<template id="b">-->
+        <!--<h2>我是BBB组件</h2>-->
+    <!--</template>-->
+
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                a:'aaa'
+            },
+            components:{
+                'aaa':{
+                    template:'<h2>我是AAA组件</h2><bbb></bbb>',
+                    components:{
+                        'bbb':{
+                            template:'<h2>我是BBB组件</h2>'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
