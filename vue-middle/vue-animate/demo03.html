@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <style>
+        #box{
+            width:400px;
+            margin:0 auto;
+        }
+        #div1{
+            width:100px;
+            height:100px;
+            background:red;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/vue/1.0.28/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js"></script>
+    <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.css" rel="stylesheet">
+
+    <div id="box">
+        <input type="button" value="按钮" @click="toggle"/>
+        <div class="animated" id="div1" v-show="bSgin" transition="bounce"></div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                bSgin:true
+            },
+            methods:{
+                toggle:function(){
+                    //this.bSgin=false;
+                    this.bSgin=!this.bSgin;
+                    //console.log(this.bSgin);
+                }
+                //toggle(){
+                //    alert(1);
+                //}   这是es6对象简写方式
+            },
+            transitions:{
+                bounce:{
+                    enterClass:'zoomInLeft',
+                    leaveClass:'zoomOutRight'
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <style>
+        #div1{
+            width:100px;
+            height:100px;
+            background:red;
+        }
+        .fade-transition{
+            transition:1s all ease;
+        }
+        .fade-enter{
+            opacity:0;
+        }
+        .fade-leave{
+            opacity:0;
+            transform: translateX(200px);
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/vue/1.0.28/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/0.7.0/vue-resource.js"></script>
+
+    <div id="box">
+        <input type="button" value="按钮" @click="toggle"/>
+        <div id="div1" v-show="bSgin" transition="fade"></div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                bSgin:true
+            },
+            methods:{
+                toggle:function(){
+                    //this.bSgin=false;
+                    this.bSgin=!this.bSgin;
+                    //console.log(this.bSgin);
+                }
+                //toggle(){
+                //    alert(1);
+                //}   这是es6对象简写方式
+            }
+        });
+    </script>
+</body>
+</html>
