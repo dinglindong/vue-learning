@@ -17,7 +17,8 @@
 3. vue实例自带方法
 4. vue自定义过滤器、指令、键盘信息
 5. vue组件
-6. vue-router路由        
+6. vue-animate动画
+7. vue-router路由        
 
 >   高级部分(vue-high)：
 
