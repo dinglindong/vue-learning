@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        var listType = window.location.search;
+        if(IsPC()){
+            window.location.href = "//www.allinmd.cn/pages/discover/series/discover_series_details.html"+listType;
+        }
+    </script>
+    <title>【系列课名称】体系化课程-唯医,allinmd</title>
+    <meta name="keywords" content="【系列课名称】、【授课老师名称】、医学系列课、专业课程">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <!--build:css /dest/pages/discover/discover_series_details.css-->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/classes/classes.css">
+    <!--endbuild-->
+
+    <meta name="data-alcode" content="a2">
+</head>
+
+<body data-alcode="290">
+<section class="al-mainInner">
+    <!-- 头部信息 -->
+    <header class="al-indexHeader" data-alcode-mod='401'>
+        <figure class="al-indexHeaderItem">
+            <a href="javascript:void(0)" class="ev_backBtn">
+                <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+            </a>
+        </figure>
+        <figure class="al-indexHeaderItem">
+            <!--<h1>系列课</h1>-->
+        </figure>
+        <figure class="al-indexHeaderItem">
+            <a href="../../personal/feedBack.html" class="feedback"><i></i>反馈</a>
+            <a href="javascript:void(0)" class="share"><i></i>分享</a>
+        </figure>
+    </header>
+
+    <!--底部收藏下载-->
+
+    <section class="collection" data-alcode-mod='647' data-alcode='e117'>收藏</section>
+    <section class="courseBanner">
+        <!--<img src="/images/img50/classes/ads.jpg">-->
+        <nav class="introduction">
+            <ul data-alcode-mod='643' data-alcode-item-selector="li">
+                <li class="active"><span>介绍</span></li>
+                <li><span>目录</span></li>
+                <li><span>相关课程</span></li>
+            </ul>
+        </nav>
+    </section>
+    <!--介绍-->
+    <section class="introductionCont">
+        <!--<section class="introductionText">-->
+            <!--&lt;!&ndash;<p>股骨头坏死</p>&ndash;&gt;-->
+            <!--&lt;!&ndash;<p>浏览：44444<span>共6节课</span></p>&ndash;&gt;-->
+            <!--&lt;!&ndash;<aside>限时免费</aside>&ndash;&gt;-->
+        <!--</section>-->
+        <!--&lt;!&ndash;讲师简介&ndash;&gt;-->
+        <!--<section class="taecherIntroduction">-->
+            <!--&lt;!&ndash;<aside class="title">讲师简介</aside>&ndash;&gt;-->
+            <!--&lt;!&ndash;<ul data-alcode-mod='644'>&ndash;&gt;-->
+            <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+        <!--</section>-->
+    </section>
+
+    <!--目录-->
+    <section class="catalogCont" style="display:none">
+        <!--<aside class="type">授课方式：视频(10)</aside>-->
+        <section class="catalogList">
+            <ul data-alcode-mod='645'>
+
+            </ul>
+        </section>
+    </section>
+
+
+    <!--相关课程-->
+    <section class="courseCont" style="display:none">
+        <!--<ul data-alcode-mod='646'>-->
+
+        <!--</ul>-->
+
+    </section>
+</section>
+<script src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script> <script>!window.jQuery&&document.write(unescape("%3Cscript src='/js/lib/jquery/jquery-2.1.0.min.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script src="//cdn.bootcss.com/jquery-json/2.4.0/jquery.json.min.js"></script><script>!$.toJSON&&document.write(unescape("%3Cscript src='/js/lib/jquery/jquery.json-2.4.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script><script>(typeof FastClick=='undefined')&&document.write(unescape("%3Cscript src='/js/third-party/fastclick.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<!--build:js /dest/pages/discover/series/discover_series_dateils.js-->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/comm.ajax.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+<script src="/js/modules/module.user.js"></script>
+<script src="/js/lib/jquery/jquery.json-2.4.js"></script>
+
+<script src="/js/scene/discover/series/discoverDetails.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<!--endbuild-->
+
+</body>
+
+</html>

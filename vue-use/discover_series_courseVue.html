@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPod");
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        if (IsPC()) {
+            window.location.href = '//www.allinmd.cn/pages/discover/series/discover_series_course.html';
+        }
+    </script>
+    <title>体系化课程-唯医,allinmd</title>
+    <meta name="keywords" content="体系化课程、系列课、医学课程、医学专题、医学体系、视频集锦、医学教育、继续教育、唯医、allinmd">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <script src="/js/third-party/flexible.js"></script>
+    <!--build:css /dest/pages/discover/series/discover_series_course.css-->
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/pages/classes/classes.css">
+    <link rel="stylesheet" href="/js/third-party/swiper/swiper.min.css">
+    <!--endbuild-->
+    <meta name="data-alcode" content="a2">
+    <style>
+        [v-cloak]{
+            display:none;
+        }
+    </style>
+</head>
+
+<body data-alcode="289">
+    <section class="al-mainInner" id="box" v-cloak>
+        <!-- 头部信息 -->
+        <section style="height:1.173rem">
+            <header class="al-indexHeader" data-alcode-mod='401'>
+                <figure class="al-indexHeaderItem">
+                    <a href="javascript:void(0)" class="ev_backBtn" @click="backBtn">
+                        <img src="/images/img50/pages/personal/arrow_back.png" alt="">
+                    </a>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                    <h1>系列课</h1>
+                </figure>
+                <figure class="al-indexHeaderItem">
+                    <a href="javascript:void(0)" class="share">
+                        <i></i>分享
+                    </a>
+                </figure>
+            </header>
+        </section>
+
+
+        <section class="courseBanner">
+            <section class="banner">
+                <a v-show="bannerShow ? true : false" :href="linkUrl"><img :src="attrUrl"></a>
+                <p v-show="historyShow ? true : false"><i id="close"></i>浏览历史<span><a :href="historyPath">{{historyName}}</a></span></p>
+            </section>
+            <section class="nav">
+                <nav :class="tab == true ? 'isFixedTab' :''">
+                    <ul class="tabtitle"  data-alcode-mod='639' data-alcode-item-selector="li">
+                        <li v-for="(item,index) in tabs" :class="{active:index == num}" @click="tabControl  (index)"><span>{{item}}</span></li>
+                    </ul>
+                </nav>
+            </section>
+
+        </section>
+
+        <!--猜你喜欢-->
+        <section class="discoverCourse data_list" v-show="listData.length!=0">
+            <aside class="title">猜你喜欢</aside>
+            <ul class="courseList data_list" data-alcode-mod="635">
+                <li v-for="(val,key) in listData" :data-seriesid="val.courseId">
+                    <div class="collaged" v-show="val.isCollected==1?true:false">已收藏</div>
+                    <a  @click="create(val.courseId,key)" :href="'/pages/discover/series/discover_series_details.html?tId='+val.courseId">
+                        <img :src="val.courseCoverPicUrl">
+                    </a>
+                    <p style="display:none">{{comm.getStrLen(val.courseName, 22)}}</p>
+                    <p><i></i>{{val.totalLearnNum.toWKH()}}<span>{{val.catalogNum}}节课</span></p>
+                </li>
+            </ul>
+            <aside class="courseMore" data-alcode-mod="639" data-alcode="e116" @click="loadMore" v-show="listNum>=6">更多好课<i></i></aside>
+            <aside class="courseMore up" data-alcode-mod="639" data-alcode="e116" @click="packUp" v-show="moreNum<6" >收起课程<i></i></aside>
+        </section>
+
+        <!--受欢迎讲师-->
+        <section class="popularLecturer" v-show="lecturerData.length!=0">
+            <aside class="title">受欢迎讲师</aside>
+            <aside class="list swiper-container">
+                <ul class="swiper-wrapper" data-alcode-mod='641'>
+                    <li v-for="(val,key) in lecturerData" class="swiper-slide">
+                        <a :href="'/pages/personal/others_contribution.html?cid='+val.customerId">
+                            <img :src="val.logoUrl" alt="">
+                        </a>
+                        <p>{{val.name}}</p>
+                    </li>
+                 </ul>
+                <div class="swiper-pagination"></div>
+            </aside>
+        </section>
+
+        <!--医鼎相关课程-->
+        <!--<section class="discoverCourse yiding_list">-->
+            <!--<aside class="title">医鼎相关课程</aside>-->
+            <!--<ul class="courseList yiding_list" data-alcode-mod='642'>-->
+
+            <!--</ul>-->
+            <!--<aside class="courseMore yidingMore">查看更多</aside>-->
+        <!--</section>-->
+        <!--系列课 END-->
+    </section>
+<script src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script><script>!window.jQuery&&document.write(unescape("%3Cscript src='/js/lib/jquery/jquery-2.1.0.min.js' %3E%3C/script%3E"));</script>
+<script src="//cdn.bootcss.com/jquery-json/2.4.0/jquery.json.min.js"></script><script>!$.toJSON&&document.write(unescape("%3Cscript src='/js/lib/jquery/jquery.json-2.4.js' type='text/javascript'%3E%3C/script%3E"));</script><script>!$.toJSON&&document.write(unescape("%3Cscript src='/js/lib/jquery/jquery.json-2.4.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script><script>(typeof FastClick=='undefined')&&document.write(unescape("%3Cscript src='/js/third-party/fastclick.js' type='text/javascript'%3E%3C/script%3E"));</script><script>(typeof FastClick=='undefined')&&document.write(unescape("%3Cscript src='/js/third-party/fastclick.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script src="//paas.allinmd.cn/modules/wapShare/shareAll.js"></script>
+<!--build:js /dest/pages/discover/series/discover_series_course.js-->
+<script src="/js/comm/main.js"></script>
+<script src="/js/comm/common.js"></script>
+<script src="/js/comm/comm.date.js"></script>
+<script src="/js/comm/comm.func.js"></script>
+<script src="/js/comm/log.js"></script>
+<script src="/js/comm/comm-customer.js"></script>
+<script src="/js/comm/comm-data.js"></script>
+<script src="/js/comm/comm_service.js"></script>
+<script src="/js/modules/module.user.js"></script>
+
+<script src="/js/third-party/swiper/swiper.jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.4.4/vue.min.js"></script>
+<script src="https://cdn.bootcss.com/axios/0.16.2/axios.min.js"></script>
+<script src="/js/scene/discover/series/discoverCourseV2.js"></script>
+<!--endbuild-->
+</body>
+</html>
