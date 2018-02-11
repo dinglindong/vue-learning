@@ -318,10 +318,10 @@ $(function(){
                         var n = comm.cutstr(data.courseName, 36);
                         data.courseName = n;
                         str+= '     <li>' +
-                        '               <a href="/pages/discover/series/discover_series_details.html?tId=' + data.courseId +'"><img src="'+data.courseCoverPicUrl+'"></a>' +
+                        '               <a href="/pages/discover/series/discover_seriesDetails.html?tId=' + data.courseId +'"><img src="'+data.courseCoverPicUrl+'"></a>' +
                         '               <aside>' +
                         '                   <p>' +
-                        '                       <a href="/pages/discover/series/discover_series_details.html?tId=' + data.courseId +'">'+data.courseName+'</a>' +
+                        '                       <a href="/pages/discover/series/discover_seriesDetails.html?tId=' + data.courseId +'">'+data.courseName+'</a>' +
                         '                   </p>' +
                         '                   <p><i></i>'+data.totalLearnNum.toWKH()+'<span>'+data.catalogNum+'节课</span></p>' +
                         '               </aside>' +
@@ -341,7 +341,7 @@ $(function(){
             //            '                   <a href='+data.webStoragePath+'><img src="'+data.seriesPicUrl+'"></a>' +
             //            '                   <aside>' +
             //            '                       <p>' +
-            //            '                           <a href="/pages/discover/series/discover_series_details.html?tId=' + data.seriesId +'">'+data.seriesTitle+'</a>' +
+            //            '                           <a href="/pages/discover/series/discover_seriesDetails.html?tId=' + data.seriesId +'">'+data.seriesTitle+'</a>' +
             //            '                       </p>' +
             //            '                       <p><i></i>'+data.browseNum.toWKH()+'<span>'+data.classNum+'节课</span></p>' +
             //            '                   </aside>' +

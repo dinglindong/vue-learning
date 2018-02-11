@@ -261,7 +261,7 @@ $(function(){
                         }
                         var s = comm.getStrLen(data.courseName, 22);
                         data.courseName = s;
-                        str += '<li data-seriesid="'+data.courseId+'" data-href="/pages/discover/series/discover_series_details.html?tId=' + data.courseId +'">' +
+                        str += '<li data-seriesid="'+data.courseId+'" data-href="/pages/discover/series/discover_seriesDetails.html?tId=' + data.courseId +'">' +
                         '           ' + collect + '' +
                         '               <img src="' + data.courseCoverPicUrl + '" />' +
                         '       <p style="display:none">' + data.courseName + '</p>' +
@@ -440,7 +440,7 @@ $(function(){
                             }
                             var s = comm.getStrLen(data.courseName, 22);
                             data.courseName = s;
-                            str += '<li data-seriesid="'+data.courseId+'" data-href="/pages/discover/series/discover_series_details.html?tId=' + data.courseId +'">' +
+                            str += '<li data-seriesid="'+data.courseId+'" data-href="/pages/discover/series/discover_seriesDetails.html?tId=' + data.courseId +'">' +
                             '           ' + collect + '' +
                             '               <img src="' + data.courseCoverPicUrl + '" />' +
                             '       <p style="display:none">' + data.courseName + '</p>' +
@@ -622,7 +622,7 @@ $(function(){
                                             }
                                             var s = comm.getStrLen(data.courseName, 22);
                                             data.courseName = s;
-                                            str += '<li data-seriesid="'+data.courseId+'" class="pageHide" data-href="/pages/discover/series/discover_series_details.html?tId=' + data.courseId +'">' +
+                                            str += '<li data-seriesid="'+data.courseId+'" class="pageHide" data-href="/pages/discover/series/discover_seriesDetails.html?tId=' + data.courseId +'">' +
                                             '       ' + collect + '' +
                                             '           <img src="' + data.courseCoverPicUrl + '" />' +
                                             '       <p style="display:none">' + data.courseName + '</p>' +
@@ -714,7 +714,7 @@ $(function(){
                                         }
                                         var s = comm.getStrLen(data.courseName, 22);
                                         data.courseName = s;
-                                        str += '<li data-seriesid="'+data.courseId+'" class="pageHide" data-href="/pages/discover/series/discover_series_details.html?tId=' + data.courseId +'">' +
+                                        str += '<li data-seriesid="'+data.courseId+'" class="pageHide" data-href="/pages/discover/series/discover_seriesDetails.html?tId=' + data.courseId +'">' +
                                         '       ' + collect + '' +
                                         '           <img src="' + data.courseCoverPicUrl + '" />' +
                                         '       <p style="display:none">' + data.courseName + '</p>' +
