@@ -25,6 +25,11 @@
             el: '#box',
             data: {
                 isShow:true
+            },
+            methods: {   
+                show(){     //还可以绑定事件来隐藏元素 @click="show()[show]"
+                    this.isShow = false;
+                }
             }
         });
     </script>
