@@ -63,7 +63,7 @@
                         <button type="button" class="close" data-dismiss="modal">
                             <span>&times;</span>
                         </button>
-                        <h4 class="modal-title">确认删除吗?</h4>
+                        <h4 class="modal-title">{{delete}}</h4>
                     </div>
                     <div class="modal-body text-right">
                         <button class="btn btn-primary btn-sm" data-dismiss="modal">取消</button>
@@ -83,7 +83,8 @@
                 myData:[],
                 username:'',
                 age:'',
-                nowIndex:-100
+                nowIndex:-100,
+                delete:'确认删除吗?'
             },
             methods:{
                 add:function(){
@@ -101,6 +102,15 @@
                         this.myData=[];
                     }else{
                         this.myData.splice(n,1);
+                    }
+                }
+            },
+            watch:{
+                "nowIndex"(){
+                    if(this.nowIndex == 'all'){
+                        this.delete = '确认删除全部吗?'
+                    }else{
+                        this.delete = '确认删除吗?'
                     }
                 }
             }
