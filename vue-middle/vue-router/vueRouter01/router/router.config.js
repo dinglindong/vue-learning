@@ -1,5 +1,5 @@
 /**
- * Create By DingLindong on 2017/12/4
+ * Create By Ding on 2017/12/4
  */
 import Introduce from "../components/Introduce"
 import Column from "../components/Column"

@@ -4,7 +4,7 @@
  * 注意事件：
  * 引入来源：  作用：系列课vue重构
  *
- * Created by dinglindong on 2017/11/06.
+ * Created by Ding on 2017/11/06.
  */
 var vm = new Vue({
     data:{

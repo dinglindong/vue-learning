@@ -1,5 +1,5 @@
 /**
- * Create By DingLindong on 2017/12/8
+ * Create By Ding on 2017/12/8
  */
 import home from "../components/Home.vue"
 import discover from "../components/Discover.vue"
